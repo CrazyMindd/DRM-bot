@@ -118,7 +118,7 @@ class TgHandler:
     @staticmethod
     def resolution_(resolution: str):
         if resolution not in ['144', '180', '240', '360', '480', '720', '1080']:
-            quality = '360'
+            quality = '480'
         else:
             quality = resolution
         return quality
@@ -176,7 +176,7 @@ class TgClient(TgHandler):
 
             msg4 = await self.bot.send_message(
                 self.m.chat.id,
-                text="**Send Quality (Default is 360) :-**"
+                text="**Send Quality (Default is 480) :-**"
             )
             user_quality = await self.bot.listen(self.m.chat.id)
             resolution = user_quality.text
